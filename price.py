@@ -1,4 +1,13 @@
-def format_price(price):
-   price = int(price)
-   print ("{} {} {}!".format ("Цена:",price,"руб"))
-format_price(56.24)
+def discounted(price, discount, max_discount=20):
+   try:
+      price=abs(float(price))
+      discount=abs(float(discount))
+      max_discount=int(max_discount)
+      if discount>=max_discount:
+         print(price)
+      else:
+         print(price-(price*discount/100))
+   except (KeyboardInterrupt, ValueError, TypeError):
+      print("не коректные данные")
+
+discounted (100, 10.3)
